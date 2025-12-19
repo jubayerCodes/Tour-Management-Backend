@@ -1,7 +1,6 @@
 import { Server } from "http";
 import mongoose from "mongoose";
 import app from "./app";
-import { envVars } from "./app/config/env";
 
 let server: Server;
 
@@ -9,7 +8,6 @@ const port = 5000;
 
 const startServer = async () => {
   try {
-    console.log(envVars.NODE_ENV);
     await mongoose.connect("mongodb+srv://jubayerCodes:ud9opppHHaMpb9Cu@cluster0.opkciwj.mongodb.net");
 
     server = app.listen(port, () => {
